@@ -1,17 +1,40 @@
 <template>
   <div class="container">
     <div>
-      <LineChart />
+      <LineChart 
+      v-if="loaded"
+      :results="results"/>
+      {{results}}
     </div>
   </div>
 </template>
 
 <script>
 import LineChart from '@/components/LineChart.vue'
-
+import axios from 'axios';
 export default {
   components: {
     LineChart
+  },
+  data: () => ({
+    loaded: false,
+    results: []
+  }),
+  async mounted () {
+    this.loaded = false
+    axios.get('https://p8zs9hb2kf.execute-api.ap-northeast-1.amazonaws.com/dev?year=2019&team_name=%E6%9C%AD%E5%B9%8C')
+    .then(response => {
+      this.loaded = true
+      let ar = response.data.map(sale=>sale.result)
+      let sum = 0
+      for(let i = 0; i < ar.length; i++) {
+        sum += ar[i]
+        // console.log(sum)
+        this.results.push(sum)
+      }
+      // this.results = response.data.map(sale=>sale.result);
+    });
+    // console.log(this.results)
   }
 }
 </script>
