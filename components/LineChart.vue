@@ -4,7 +4,7 @@ import { Line } from 'vue-chartjs'
 
 export default {
   extends: Line,
-  props: ['results'],
+  props: ['results1','year1','team1','results2','year2','team2'],
   data(){
     return {
         chartdata: {
@@ -13,9 +13,20 @@ export default {
                 {
                 lineTension: 0, 
                 // 直線的な推移
-                label: ['勝ち点推移'],
-                backgroundColor: '#f87979',
-                data: this.results
+                label: [`${this.year1}年の${this.team1}の勝ち点`],
+                // backgroundColor: '#f87979',
+                borderColor: "rgba(255,0,0,1)",
+                backgroundColor: "rgba(0,0,0,0)",
+                data: this.results1
+                },
+                {
+                lineTension: 0, 
+                // 直線的な推移
+                label: [`${this.year2}年の${this.team2}の勝ち点`],
+                // backgroundColor: '#f87979',
+                borderColor: "rgba(0,0,255,1)",
+                backgroundColor: "rgba(0,0,0,0)",
+                data: this.results2
                 }
             ]
         },
@@ -28,12 +39,7 @@ export default {
   },
   mounted () {
     this.renderChart(this.chartdata, this.options)
-    console.log(this.results)
-  },
-  // mounted(){
-  //   axios.get('https://p8zs9hb2kf.execute-api.ap-northeast-1.amazonaws.com/dev?year=2019&team_name=%E6%9C%AD%E5%B9%8C')
-  //         .then(response => this.records = response.data);
-  //   console.log(this.records)
-  // }
+    // console.log(this.results1)
+  }
 }
 </script>
