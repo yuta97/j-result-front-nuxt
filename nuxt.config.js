@@ -40,7 +40,7 @@ export default {
   build: {
   },
   router: {
-    base: '//j-result-front-nuxt/'
+    base: '/j-result-front-nuxt/'
   },
   ssr: false,
   target: 'static'
