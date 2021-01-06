@@ -8,7 +8,7 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/j-result-front-nuxt-dist/favicon.ico' }
     ]
   },
 
@@ -38,5 +38,10 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+  },
+  router: {
+    base: '/j-result-front-nuxt-dist/'
+  },
+  ssr: false,
+  target: 'static'
 }
