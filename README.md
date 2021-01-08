@@ -1,20 +1,18 @@
-# nuxt-first
+# J検索くん(勝ち点の推移)フロント
+- サッカーJリーグのデータをスクレイピングしたWebAPIからデータを受け取りグラフを表示。
+- J1の2016~2020のチームの勝ち点の推移をみることができる。
+- [こちらから検索サイトに飛べます](https://yuta97.github.io/j-result-front-nuxt/)
+- フロントの検索画面
+<img src="front-image.png" width="100px">
 
-## Build Setup
+<!-- 画像がずれてるので配置とサイズ修正 -->
 
-```bash
-# install dependencies
-$ npm install
+<!-- # 全体の構成・使用技術・ライブラリなど -->
+# 使用技術
+- Javascript (Nuxt.js,Chart.js)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+<!-- # 使い方 -->
 
-# build for production and launch server
-$ npm run build
-$ npm run start
 
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+# 作成者
+増井　悠太
