@@ -11,7 +11,7 @@
         <option v-for="n in 4" v-bind:value="n + 2016">{{ n + 2016 }}年</option>
       </select>
       <select v-model="team1">
-        <option v-for="team1 in teams" v-bind:value="team1">{{ team1 }}</option>
+        <option v-for="team1 in teamlist" v-bind:value="team1">{{ team1 }}</option>
       </select>
       <button @click="getApi1" >検索1</button>
     </div>
@@ -20,7 +20,7 @@
         <option v-for="n in 4" v-bind:value="n + 2016">{{ n + 2016 }}年</option>
       </select>
       <select v-model="team2">
-        <option v-for="team2 in teams" v-bind:value="team2">{{ team2 }}</option>
+        <option v-for="team2 in teamlist" v-bind:value="team2">{{ team2 }}</option>
       </select>
       <button @click="getApi2" >検索2</button>
     </div>
@@ -45,7 +45,7 @@ export default {
   },
   data: () => ({
     loaded: false,
-    teams: ['札幌','仙台','鹿島','浦和','柏','FC東京','川崎Ｆ','横浜FM','横浜FC','湘南','清水','名古屋','Ｇ大阪','Ｃ大阪','神戸','広島','鳥栖','大分','松本','磐田','長崎','大宮'],
+    teamlist: ['札幌','仙台','鹿島','浦和','柏','FC東京','川崎Ｆ','横浜FM','横浜FC','湘南','清水','名古屋','Ｇ大阪','Ｃ大阪','神戸','広島','鳥栖','大分','松本','磐田','長崎','大宮'],
     year1: 2020,
     team1: '札幌',
     results1: [],
