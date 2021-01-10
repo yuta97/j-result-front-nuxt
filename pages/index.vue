@@ -1,4 +1,4 @@
-<template>
+<template>  
   <div class="container">
     <div>
       <select type="number" name="year" v-model="year1">
@@ -30,9 +30,11 @@
 
 <script>
 import LineChart from '@/components/LineChart.vue'
+import Header from '@/components/Header.vue'
 import axios from 'axios';
 export default {
   components: {
+    Header,
     LineChart
   },
   data: () => ({
