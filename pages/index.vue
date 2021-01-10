@@ -1,4 +1,10 @@
 <template>  
+  <div>
+  <div class='description'>
+      <p>
+        このサイトでは2017年〜2020年のJ1チームの勝ち点推移を比較することができます。
+      </p>
+  </div>
   <div class="container">
     <div>
       <select type="number" name="year" v-model="year1">
@@ -9,7 +15,6 @@
       </select>
       <button @click="getApi1" >検索1</button>
     </div>
-    
     <div>
       <select type="number" name="year" v-model="year2">
         <option v-for="n in 4" v-bind:value="n + 2016">{{ n + 2016 }}年</option>
@@ -25,6 +30,7 @@
       :results1="results1" :year1="year1" :team1="team1"
       :results2="results2" :year2="year2" :team2="team2"/>
     </div>
+  </div>
   </div>
 </template>
 
@@ -95,7 +101,9 @@ export default {
   align-items: center;
   text-align: center;
 }
-
+.description {
+  padding: 20px;
+}
 .title {
   font-family:
     'Quicksand',
